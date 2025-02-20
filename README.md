@@ -8,6 +8,7 @@ Fork this repository and share with me (@kingledion). When we're done with the c
 
 - Install [`pyenv`](https://github.com/pyenv/pyenv?tab=readme-ov-file#installation) for Python veresion management
 - Use pyenv make Python version available for current version; e.g. `pyenv install 3.12`
+    - NOTE: there is an issue with `3.12.5`; tested working with `3.12.6` and `3.12.9`. 
 - Install [`poetry`](https://python-poetry.org/docs/#installation)
 
 ## Development setup
@@ -54,6 +55,8 @@ This isn't strictly necessary for the code challenge, but it will help keep ever
 Unit testing is run using `make test`. 
 
 ## Run locally
-- This example is designed to run with its own SQLite database to avoid issues with setting up any dependencies
+- This example is designed to run with its own SQLite database to avoid issues with setting up any dependencies. A user is auto-populated with the startup in main so that notifications can be tested. 
 
 - Run the server locally with `make server`
+
+- Test locally using the rest commands in  `test.rest.http`. These are designed to work with the VSCode plugin "REST Client" by Huchao Mao, but can easily be converted to CURL commands.
