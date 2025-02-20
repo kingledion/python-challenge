@@ -5,6 +5,7 @@ from typing import AsyncIterator
 from fastapi import FastAPI
 
 from lib.data import DB
+from notify.basedata import populate
 from notify.routes import notify
 
 # get root logger
@@ -19,6 +20,10 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     logger.info("Performing database migration...")
     db.init_db()
     logger.info("...finished local database migration")
+
+    logger.info("Adding base data...")
+    populate(db)
+    logger.info("...added base data")
     yield
     # any required cleanup will go here
 
