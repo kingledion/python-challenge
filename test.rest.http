@@ -12,3 +12,7 @@ content-type: application/json
     "category": "chat",
     "payload": {"message_id": 12345}
 }
+
+###
+
+GET http://localhost:5678/notify/notifications/1
