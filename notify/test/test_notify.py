@@ -1,7 +1,7 @@
 from typing import Sequence
 
-from fastapi.testclient import TestClient
 import pytest
+from fastapi.testclient import TestClient
 
 from lib.data import Session
 from notify.model import NotificationResponse

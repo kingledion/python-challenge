@@ -65,13 +65,11 @@ def testdata(session: Session) -> TestData:
             id=1,
             date_joined=datetime.now(),
             last_login=datetime.now(),
-
             o2x_id=12345,
             email="user.zero@example.org",
             phone="123-456-7890",
             first_name="user",
             last_name="zero",
-
             is_active=True,
             is_onboarded=True,
             is_superuser=True,
