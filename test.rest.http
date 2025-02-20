@@ -2,8 +2,7 @@ GET http://localhost:5678/notify/health
 
 ###
 
-POST http://localhost:5678/notify/notification HTTP/1.1
-content-type: application/json
+POST http://localhost:5678/notify/notification 
 
 {
     "user_id": 1,
