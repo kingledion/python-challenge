@@ -1,0 +1,14 @@
+GET http://localhost:5678/notify/health
+
+###
+
+POST http://localhost:5678/notify/notification HTTP/1.1
+content-type: application/json
+
+{
+    "user_id": 1,
+    "title": "Test Notification",
+    "body": "This is a test notification.",
+    "category": "chat",
+    "payload": {"message_id": 12345}
+}
