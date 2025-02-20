@@ -1,0 +1,4 @@
+{
+    "mypy-type-checker.args": ["--config-file=${workspaceFolder}/.mypy.ini"],
+    "mypy-type-checker.reportingScope": "workspace"
+}
