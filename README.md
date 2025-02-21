@@ -4,6 +4,8 @@ Repository for technical interviews
 
 Fork this repository and share with me (@kingledion). When we're done with the code challenge I'd like you to commit the code to your fork so I can take a look at it again later to refresh my memory. Please, no changes after we are finished with the live challenge. 
 
+This is a stripped down version of some production code of ours. Many things are simplified, including logging and error handling, and especially authentication, which is completely removed for this exercise. 
+
 ## Prerequisites
 
 - Install [`pyenv`](https://github.com/pyenv/pyenv?tab=readme-ov-file#installation) for Python veresion management
