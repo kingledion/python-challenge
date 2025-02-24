@@ -35,6 +35,7 @@ class Notification(CreationMetadataMixin, Base):
         ForeignKey("users.id"),
         index=True,
     )
+    read: Mapped[bool] = mapped_column(default=False)
 
     @classmethod
     def from_JSON(self, nr: "NotificationRequest") -> Self:
@@ -51,6 +52,7 @@ class NotificationRequest(BaseModel):
     payload: dict[str, Any]
     is_push_notification: bool | None = None
     user_id: int
+    read: bool | None = None
 
 
 class NotificationResponse(NotificationRequest):

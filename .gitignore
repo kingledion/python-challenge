@@ -173,3 +173,5 @@ cython_debug/
 .mypy_cache/
 
 .vscode/
+.idea
+*.DS_Store
