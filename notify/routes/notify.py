@@ -35,4 +35,11 @@ def notify(db: DB) -> APIRouter:
     ) -> NotificationResponse:
         return handler.post_notification(req)
 
+    @router.put('/notification/{notification_id}/read')
+    async def def_mark_as_read(
+            notification_id: int,
+            handler: Annotated[Notify, Depends(get_handler)]
+    ) -> NotificationResponse:
+        return handler.mark_as_read(notification_id)
+
     return router

@@ -8,6 +8,27 @@ from notify.model import NotificationResponse
 
 
 @pytest.mark.parametrize(
+    "arg_notification_id, exp_status_code",
+    [
+        (1, 200)
+    ]
+)
+def test_mark_as_read(
+        session: Session,
+        client: TestClient,
+        testdata,
+        arg_notification_id,
+        exp_status_code,
+):
+    result = client.put(f'/notify/notification/{arg_notification_id}/read')
+    assert result.status_code == exp_status_code
+
+    if exp_status_code == 200:
+        resp = NotificationResponse.model_validate(result.json())
+        assert resp.read
+
+
+@pytest.mark.parametrize(
     "arg_user_id, exp_status_code, exp_notification_count",
     [
         (-1, 400, None),  # negative number should not be valid

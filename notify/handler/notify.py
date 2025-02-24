@@ -38,3 +38,12 @@ class Notify:
                 raise HTTPException(400, "No user found for this notification")
 
         return note.to_JSON()
+
+    def mark_as_read(self, notification_id: int) -> NotificationResponse:
+        with self.db.get_session() as session:
+            try:
+                note = notifications.mark_as_read(session, notification_id)
+            except NoResultFound:
+                raise HTTPException(400, "No notification found")
+
+        return note.to_JSON()
